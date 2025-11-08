@@ -1,6 +1,8 @@
-# Quantum FPGA Simulator for Xanadu
+# StellarForge ⭐
 
-A high-performance quantum circuit simulator demonstrating FPGA-accelerated quantum computing capabilities, integrated with PennyLane and featuring real-time quantum error correction.
+**StellarForge** - A high-performance quantum computing framework demonstrating FPGA-accelerated quantum computing capabilities, seamlessly integrated with Xanadu's PennyLane ecosystem and featuring real-time quantum error correction.
+
+*Forging the future of photonic quantum computing through hardware acceleration.*
 
 ## Overview
 
@@ -23,14 +25,12 @@ This project showcases three interconnected quantum computing projects designed 
 From the project root directory:
 
 ```bash
-cd quantum-fpga-simulator
 pip install -r requirements.txt
 ```
 
 Or install as a package:
 
 ```bash
-cd quantum-fpga-simulator
 pip install -e .
 ```
 
@@ -111,7 +111,6 @@ The simulator demonstrates significant speedups for 5+ qubit circuits:
 Run the benchmark suite to see detailed performance comparisons:
 
 ```bash
-cd quantum-fpga-simulator
 python benchmarks/benchmark.py
 python benchmarks/qec_benchmark.py
 ```

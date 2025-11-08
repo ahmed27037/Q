@@ -7,13 +7,13 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
-    name="quantum-fpga-simulator",
+    name="stellarforge",
     version="0.1.0",
-    author="Quantum FPGA Projects",
-    description="FPGA-accelerated quantum computing simulator with PennyLane integration and QEC",
+    author="StellarForge Quantum",
+    description="StellarForge: FPGA-accelerated quantum computing framework with PennyLane integration and real-time QEC",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/quantum-fpga-simulator",
+    url="https://github.com/ahmed27037/Q",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",

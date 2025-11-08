@@ -1,4 +1,4 @@
-# Q Project - Project Description & Diagrams
+# StellarForge ⭐ - Project Description & Diagrams
 
 ## Quick Summary (2 Bullet Points)
 
@@ -28,7 +28,7 @@
 
 ```mermaid
 graph TB
-    subgraph "Q Project Architecture"
+    subgraph "StellarForge Architecture"
         A[User/Application] --> B[PennyLane Interface]
         A --> C[Direct Simulator API]
         A --> D[QEC Framework]

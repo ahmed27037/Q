@@ -1,0 +1,36 @@
+graph TB
+    subgraph "StellarForge Architecture"
+        A[User/Application] --> B[PennyLane Interface]
+        A --> C[Direct Simulator API]
+        A --> D[QEC Framework]
+        
+        B --> E[FPGADevice Plugin]
+        E --> F[QuantumCircuit]
+        
+        C --> F
+        F --> G[FPGASimulator Engine]
+        
+        D --> H[Error Simulator]
+        D --> I[QEC Decoders]
+        D --> J[Feedback Loop]
+        
+        G --> K[JAX Backend]
+        G --> L[NumPy Fallback]
+        
+        I --> M[Steane Decoder]
+        I --> N[Surface Decoder]
+        I --> O[Union-Find Decoder]
+        
+        H --> I
+        I --> J
+        J --> P[Correction Application]
+        
+        K --> Q[Parallel Processing]
+        K --> R[JIT Compilation]
+        
+        style G fill:#4a90e2
+        style E fill:#50c878
+        style I fill:#ff6b6b
+        style K fill:#f39c12
+    end
+

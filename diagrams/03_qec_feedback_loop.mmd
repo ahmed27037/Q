@@ -1,0 +1,43 @@
+flowchart TD
+    Start([QEC Cycle Start]) --> Errors[Introduce Random Errors]
+    Errors --> XErrors[X Errors on Qubits]
+    Errors --> ZErrors[Z Errors on Qubits]
+    
+    XErrors --> Measure[Measure Stabilizer Syndrome]
+    ZErrors --> Measure
+    
+    Measure --> XSyndrome[X Stabilizer Measurements]
+    Measure --> ZSyndrome[Z Stabilizer Measurements]
+    
+    XSyndrome --> Decoder[QEC Decoder]
+    ZSyndrome --> Decoder
+    
+    Decoder --> Lookup{Lookup Table<br/>Steane Code}
+    Decoder --> Matching{Matching Algorithm<br/>Surface Code}
+    Decoder --> UnionFind{Union-Find<br/>Multiple Errors}
+    
+    Lookup --> Correction[Determine Correction]
+    Matching --> Correction
+    UnionFind --> Correction
+    
+    Correction --> Apply[Apply Correction to Qubits]
+    Apply --> Verify{All Errors<br/>Corrected?}
+    
+    Verify -->|Yes| Success[Success: Update Statistics]
+    Verify -->|No| Failure[Failure: Update Statistics]
+    
+    Success --> Latency[Record Decoding Latency]
+    Failure --> Latency
+    
+    Latency --> Stats[Update Performance Metrics]
+    Stats --> End([Cycle Complete])
+    
+    Stats --> NextCycle{More Cycles?}
+    NextCycle -->|Yes| Start
+    NextCycle -->|No| Results[Return Statistics:<br/>Success Rate, Latency, Throughput]
+    
+    style Decoder fill:#ff6b6b
+    style Correction fill:#50c878
+    style Latency fill:#f39c12
+    style Stats fill:#4a90e2
+
