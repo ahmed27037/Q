@@ -1,16 +1,34 @@
-# StellarForge ⭐
+# FPGA-Accelerated Quantum Simulator with PennyLane and QEC
 
-**StellarForge** - A high-performance quantum computing framework featuring FPGA-accelerated simulation, seamless PennyLane integration, and real-time quantum error correction.
-
-*Forging the future of quantum computing through hardware acceleration.*
+A high-performance quantum computing framework featuring FPGA-accelerated simulation, seamless PennyLane integration, and real-time quantum error correction.
 
 ## Overview
 
-StellarForge is a comprehensive quantum computing framework that combines three powerful components:
+This project combines three powerful components:
 
 1. **FPGA-Accelerated Quantum Circuit Simulator** - High-performance simulator using JAX/optimized NumPy for FPGA-like parallel processing
 2. **PennyLane Device Plugin** - Native device plugin for seamless integration with the PennyLane quantum computing ecosystem
 3. **Quantum Error Correction Decoder** - Real-time QEC decoder with low-latency processing for fault-tolerant quantum computing
+
+## Architecture
+
+### System Architecture Overview
+
+![System Architecture](diagrams/01_system_architecture.png)
+
+The complete system architecture showing integration between simulator, PennyLane plugin, and QEC framework.
+
+### Quantum Circuit Execution Flow
+
+![Circuit Execution Flow](diagrams/02_circuit_execution_flow.png)
+
+Sequence diagram illustrating circuit creation, gate application, and JAX-accelerated parallel processing.
+
+### Quantum Error Correction Feedback Loop
+
+![QEC Feedback Loop](diagrams/03_qec_feedback_loop.png)
+
+Complete QEC cycle visualization showing error introduction, syndrome measurement, decoder processing, and correction application.
 
 ## Features
 
@@ -26,8 +44,38 @@ StellarForge is a comprehensive quantum computing framework that combines three 
 
 - Python 3.9 or higher
 - pip package manager
+- Git (for cloning the repository)
 
-### Quick Install
+### Windows 11 PowerShell
+
+Run these commands in PowerShell to install everything and run the project:
+
+```powershell
+# Clone the repository
+git clone https://github.com/ahmed27037/Q.git
+cd Q
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install as a package
+pip install -e .
+
+# Run example algorithms
+python examples\grover.py
+python examples\vqe.py
+python examples\qml_classifier.py
+python examples\pennylane_demo.py
+python examples\surface_code.py
+
+# Run benchmarks
+python benchmarks\benchmark.py
+python benchmarks\qec_benchmark.py
+```
+
+### macOS / Linux
+
+Run these commands in Terminal to install everything and run the project:
 
 ```bash
 # Clone the repository
@@ -37,11 +85,20 @@ cd Q
 # Install dependencies
 pip install -r requirements.txt
 
-# Install StellarForge as a package (recommended)
+# Install as a package
 pip install -e .
-```
 
-That's it! You're ready to use StellarForge.
+# Run example algorithms
+python examples/grover.py
+python examples/vqe.py
+python examples/qml_classifier.py
+python examples/pennylane_demo.py
+python examples/surface_code.py
+
+# Run benchmarks
+python benchmarks/benchmark.py
+python benchmarks/qec_benchmark.py
+```
 
 ## Quick Start
 
@@ -72,7 +129,7 @@ print("Probabilities:", probs)
 ```python
 import pennylane as qml
 
-# Use StellarForge as a PennyLane device
+# Use the FPGA simulator as a PennyLane device
 dev = qml.device("fpga.simulator", wires=4)
 
 @qml.qnode(dev)
@@ -112,29 +169,10 @@ success = simulator.apply_correction(correction)
 print("Correction successful:", success)
 ```
 
-### Example 4: Run Example Algorithms
-
-```bash
-# Run Grover's search algorithm
-python examples/grover.py
-
-# Run Variational Quantum Eigensolver (VQE)
-python examples/vqe.py
-
-# Run Quantum Machine Learning classifier
-python examples/qml_classifier.py
-
-# Run PennyLane integration demo
-python examples/pennylane_demo.py
-
-# Run surface code QEC example
-python examples/surface_code.py
-```
-
 ## Project Structure
 
 ```
-StellarForge/
+.
 ├── simulator/          # Core FPGA-accelerated simulator
 │   ├── fpga_simulator.py
 │   ├── circuit.py
@@ -166,16 +204,6 @@ The simulator demonstrates significant speedups for quantum circuits:
 - **Seamless integration** with PennyLane workflows
 - **Real-time error correction** with microsecond-level decoding latency
 
-### Running Benchmarks
-
-```bash
-# Benchmark simulator performance
-python benchmarks/benchmark.py
-
-# Benchmark QEC decoder performance
-python benchmarks/qec_benchmark.py
-```
-
 ## Key Capabilities
 
 ### 1. PennyLane Integration
@@ -196,20 +224,20 @@ python benchmarks/qec_benchmark.py
 - **Scalability**: Architecture designed to scale with increasing qubit counts
 - **JAX Acceleration**: JIT compilation and parallel operations for maximum performance
 
-## Future FPGA Porting
+## Technologies Used
 
-The current implementation uses optimized Python libraries (JAX) to simulate FPGA parallelism. The architecture is designed for straightforward porting to FPGA hardware:
-
-- Parallel processing patterns match FPGA resource utilization
-- Memory access patterns optimized for BRAM usage
-- Latency measurements simulate FPGA timing constraints
+- **Python** - Primary programming language
+- **JAX** - JIT compilation and parallel processing acceleration
+- **NumPy** - Numerical computing foundation
+- **PennyLane** - Quantum computing framework integration
+- **SciPy** - Scientific computing and optimization
+- **Qiskit** - Used for performance benchmarking
 
 ## Documentation
 
 - **[Quick Start Guide](QUICKSTART.md)** - Get up and running quickly
 - **[Technical Documentation](docs/TECHNICAL_DOCS.md)** - Detailed technical information
 - **[Performance Analysis](docs/PERFORMANCE_ANALYSIS.md)** - Performance benchmarks and analysis
-- **[Project Description](PROJECT_DESCRIPTION.md)** - Comprehensive project overview with diagrams
 
 ## License
 
@@ -217,7 +245,7 @@ MIT License
 
 ## Contributing
 
-Contributions welcome! This project showcases quantum computing and FPGA integration capabilities.
+Contributions welcome! This project demonstrates quantum computing and FPGA integration capabilities.
 
 ## Support
 
