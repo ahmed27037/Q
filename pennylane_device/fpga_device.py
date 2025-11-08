@@ -24,7 +24,7 @@ class FPGADevice(qml.Device):
     name = "FPGA Simulator"
     short_name = "fpga.simulator"
     version = "0.1.0"
-    author = "StellarForge Quantum"
+    author = "Quantum Computing Framework"
     
     operations = {
         "PauliX", "PauliY", "PauliZ", "Hadamard",

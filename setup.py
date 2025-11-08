@@ -7,10 +7,10 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
-    name="stellarforge",
+    name="fpga-quantum-simulator",
     version="0.1.0",
-    author="StellarForge Quantum",
-    description="StellarForge: FPGA-accelerated quantum computing framework with PennyLane integration and real-time QEC",
+    author="Quantum Computing Framework",
+    description="FPGA-accelerated quantum computing framework with PennyLane integration and real-time QEC",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ahmed27037/Q",
