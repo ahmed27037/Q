@@ -120,8 +120,8 @@ Comparisons made against:
 
 ## References
 
-- Xanadu PennyLane: https://pennylane.ai
-- Xanadu FlamingPy: https://flamingpy.readthedocs.io
+- PennyLane: https://pennylane.ai
+- Qiskit: https://qiskit.org
 - IBM FPGA QEC: Recent FPGA-based error correction demonstrations
 - Steane Code: A. M. Steane, "Error correcting codes in quantum theory"
 - Surface Code: R. Raussendorf and J. Harrington, "Fault-tolerant quantum computation"

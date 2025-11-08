@@ -3,7 +3,7 @@ PennyLane Device Plugin for FPGA Simulator
 
 This module provides a PennyLane device interface that uses the FPGA-accelerated
 simulator as the backend. This enables seamless integration with PennyLane's
-ecosystem and Xanadu's quantum computing tools.
+quantum computing ecosystem.
 """
 
 import numpy as np
@@ -18,7 +18,7 @@ class FPGADevice(qml.Device):
     PennyLane device using the FPGA-accelerated quantum simulator.
     
     This device enables PennyLane circuits to run on our FPGA simulator,
-    demonstrating integration with Xanadu's quantum computing ecosystem.
+    providing seamless integration with the PennyLane quantum computing ecosystem.
     """
     
     name = "FPGA Simulator"
