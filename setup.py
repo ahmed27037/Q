@@ -13,7 +13,7 @@ setup(
     description="FPGA-accelerated quantum computing framework with PennyLane integration and real-time QEC",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ahmed27037/Q",
+    url="https://github.com/yourusername/quantum-fpga-simulator",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",

@@ -1,0 +1,17 @@
+flowchart TB
+    User[User Code / Applications]
+    PennyLane[PennyLane Interface]
+    PySimulator[Python Simulator Layer]
+    JAX[JAX Backend<br/>Software Only]
+    FPGA[FPGA Hardware<br/>Optional Accelerator]
+    
+    User --> PennyLane
+    User --> PySimulator
+    PennyLane --> PySimulator
+    PySimulator --> JAX
+    PySimulator -.Optional.-> FPGA
+    
+    style JAX fill:#4CAF50
+    style FPGA fill:#FF9800
+    style PennyLane fill:#2196F3
+

@@ -54,3 +54,6 @@ Thumbs.db
 *.log
 *.cache
 
+# Diagram PNGs (generated locally, not committed)
+docs/diagrams/*.png
+

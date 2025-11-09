@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant User
+    participant Circuit
+    participant Simulator
+    participant JAX
+    participant Memory
+    
+    User->>Circuit: Create circuit(num_qubits)
+    User->>Circuit: Apply gates (H, CNOT, etc.)
+    Circuit->>Circuit: Store gate sequence
+    User->>Circuit: Execute()
+    Circuit->>Simulator: Initialize statevector
+    Simulator->>Memory: Allocate |00...0⟩
+    
+    loop For each gate
+        Circuit->>Simulator: Apply gate matrix
+        Simulator->>JAX: Parallel matrix-vector mult
+        JAX->>JAX: JIT compile & optimize
+        JAX->>Memory: Update statevector
+    end
+    
+    Simulator->>User: Return final state
+

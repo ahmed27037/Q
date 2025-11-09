@@ -1,0 +1,42 @@
+flowchart TB
+    subgraph "Application Layer"
+        PL[PennyLane Circuits]
+        QML[QML Models]
+        VQE[VQE/Grover]
+    end
+    
+    subgraph "Python Interface Layer"
+        DEV[FPGADevice Plugin]
+        API[Simulator API]
+    end
+    
+    subgraph "Execution Backends"
+        SW[Software Backend<br/>JAX Simulator]
+        HW[Hardware Backend<br/>FPGA via PCIe]
+    end
+    
+    subgraph "FPGA Hardware"
+        CTRL[control_interface.sv]
+        GATE[quantum_gate_core.sv]
+        QEC[qec_decoder.sv]
+        MEM[statevector_memory.sv]
+    end
+    
+    PL --> DEV
+    QML --> DEV
+    VQE --> DEV
+    
+    DEV --> API
+    API --> SW
+    API --> HW
+    
+    HW --> CTRL
+    CTRL --> GATE
+    CTRL --> QEC
+    GATE --> MEM
+    QEC --> MEM
+    
+    style SW fill:#90EE90
+    style HW fill:#87CEEB
+    style FPGA fill:#FFB6C1
+

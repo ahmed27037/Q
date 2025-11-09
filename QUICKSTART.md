@@ -85,7 +85,7 @@ This will:
 
 ```
 .
-├── simulator/              # Core FPGA simulator
+├── simulator/              # Core FPGA simulator (Python)
 │   ├── fpga_simulator.py  # Main simulator engine
 │   ├── quantum_gates.py   # Gate implementations
 │   └── circuit.py         # Circuit interface
@@ -95,10 +95,24 @@ This will:
 │   ├── decoder.py         # QEC decoders
 │   ├── simulator.py       # Error simulation
 │   └── feedback_loop.py   # Feedback loop
+├── fpga/                  # FPGA hardware implementation (SystemVerilog)
+│   ├── quantum_gate_core.sv    # Hardware gate engine
+│   ├── qec_decoder.sv          # Hardware QEC decoder
+│   ├── statevector_memory.sv   # BRAM-based memory
+│   ├── control_interface.sv    # PCIe/AXI interface
+│   └── testbenches/            # Verification testbenches
 ├── benchmarks/            # Performance benchmarks
 ├── examples/              # Example algorithms
 └── docs/                  # Documentation
 ```
+
+## FPGA Hardware Implementation
+
+This project includes actual **SystemVerilog HDL code** in the `fpga/` directory:
+
+- **Dual approach**: Python simulator (software) + SystemVerilog (hardware)
+- **Ready for synthesis**: Can be deployed to Xilinx or Intel FPGAs
+- **See `fpga/README.md`** for synthesis and deployment instructions
 
 ## Next Steps
 

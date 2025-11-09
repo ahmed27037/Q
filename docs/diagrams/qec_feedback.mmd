@@ -1,0 +1,12 @@
+flowchart LR
+    A[Quantum State] --> B[Errors Introduced]
+    B --> C[Measure Syndrome]
+    C --> D{Decoder<br/>Lookup Table}
+    D --> E[Correction Pattern]
+    E --> F[Apply Correction]
+    F --> G[Corrected State]
+    
+    style D fill:#FF5722
+    style C fill:#2196F3
+    style F fill:#4CAF50
+
